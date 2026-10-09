@@ -6,6 +6,7 @@ set -eu
 cd -- "$(dirname -- "$0")"
 case "${1:-}" in
  install)
+  bash install-deps.sh
   python3 -c 'from pathlib import Path;compile(Path("browser.py").read_bytes(),"browser.py","exec");import PIL,websocket;from browser import chromium;assert chromium(),"Install Chromium first"' ;;
  run) shift;exec python3 browser.py "$@" ;;
  *) echo 'Use: bash app-store.sh install OR bash app-store.sh run';exit 1 ;;
