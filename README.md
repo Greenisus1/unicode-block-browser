@@ -15,3 +15,7 @@ One temporary profile lasts until quit, so the page can set ordinary temporary c
     python3 -m unittest -v
 
 Minimum40x12, Unicode monospace terminal recommended;8-color half-blocks, monochrome fallback. View scales to terminal width up to240 columns. Linux6 unit tests and actual sandboxed Chrome local HTTP/JavaScript/link navigation, unsupported-link filtering, temporary-profile cleanup, fullscreen PTY link-selection/resize/exit/restoration checked. Physical Pi and non-Linux untested. MIT license. Not a replacement for a desktop browser.
+
+## 1.1.1 dependency repair
+
+Store installation now checks and installs missing Debian/DietPi packages python3-pil, python3-websocket and chromium using apt-get. It uses root or normal sudo authentication, refreshes apt indexes only when packages are missing, and verifies imports and the Chromium executable afterward. This can download packages and requires network/package-manager access. Unsupported package managers stop with an explicit instruction rather than changing the system Python through pip. Actual DietPi install needs hardware retest; installer branches tested with mock package commands only.
